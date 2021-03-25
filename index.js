@@ -85,15 +85,25 @@ class Airplane {
     fill(gallons) {
       return this.tank += (gallons)
     }
+    // fills gas tank
+
     drive(distance) {
-      if(this.distance > 0){
-        this.odometer += (distance);
-      if(tank > this.milesPerGallon)
-        this.tank -= (distance / this.milesPerGallon);
+      const availableDistance = this.tank * this.milesPerGallon;
+      if (distance < availableDistance){
+         this.odometer += (distance);
+           // odometer goes up 
+         this.tank -= (distance / this.milesPerGallon); 
+         // tank goes down
+      }else {
+        this.tank = 0;
+        this.odometer += availableDistance;
+        return `I ran out of fuel at ${this.odometer} miles!`;
+        // out of gas - odometer adds distance traveled
       }
-      return `I ran out of fuel at ${this.odometer} miles!`
-    }
-  }
+    } 
+ }
+  
+  
   
   /*
     TASK 3
@@ -108,6 +118,9 @@ class Airplane {
           + {name} and {location} of course come from the instance's own properties.
   */
  class Lambdasian {
+   constructor(){
+
+   }
     
   }
   
