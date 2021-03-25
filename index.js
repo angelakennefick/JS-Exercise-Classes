@@ -122,7 +122,7 @@ class Airplane {
  this.name = poop.name;
  this.age = poop.age;
  this.location = poop.location;
-
+// poop = attributes but more fun
    }
     speak(poop){
       return `Hello my name is ${this.name}, I am from ${this.location}`
@@ -139,13 +139,25 @@ class Airplane {
           + `catchPhrase`: i.e. `Don't forget the homies`.
       - The constructor calls the parent constructor passing it what it needs.
       - The constructor should also initialize `specialty`, `favLanguage` and `catchPhrase` properties on the instance.
+
       - Instructor instances have the following methods:
           + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
           + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
   */
  class Instructor extends Lambdasian {
-
+  constructor(poop) {
+    super(poop);
+    this.specialty = poop.specialty;
+    this.favLanguage = poop.favLanguage;
+    this.catchPhrase = poop.catchPhrase;
  }
+demo(subject) {
+  return  `Today we are learning about ${subject}`;
+}
+grade(student, subject) {
+  return `${student.name} receives a perfect score on ${subject}`
+}
+}
   /*
     TASK 5
       - Write a Student class extending Lambdasian.
